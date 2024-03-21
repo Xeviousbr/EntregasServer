@@ -75,6 +75,7 @@ class AppController extends Controller
         $pessoaperfil = new PessoaPerfil;
         $pessoaperfil->idPessoa = $user->id;
         $pessoaperfil->idPerfil  = 8;
+        $user->PIX = $request->input('PIX'); 
         $pessoaperfil->save();
         return response()->json(['id' => $user->id], 201);
     }    
